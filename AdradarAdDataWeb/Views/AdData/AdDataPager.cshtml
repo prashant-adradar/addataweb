@@ -1,0 +1,31 @@
+﻿@model AdradarAdDataWeb.Models.PagerData
+
+@{
+    int intNumberOfPages = (int)(Model.NumberOfRows / Model.NumberOfRowsPerPage);
+}
+
+<span id="pagerctrls">
+    <span class="btn-group">
+        @if (Model.CurrentPageNumber > 1)
+        {
+            <span class="btn btn-primary">@Html.ActionLink("First", Model.Action, Model.Controller, new { pagenumber = 1, sortby = Model.SortBy }, null)</span>
+            <span class="btn btn-primary">@Html.ActionLink("Back", Model.Action, Model.Controller, new { pagenumber = ((Model.CurrentPageNumber > 1) ? Model.CurrentPageNumber - 1 : 1), sortby = Model.SortBy }, null)</span>
+        }
+        else
+        {
+            <span class="btn btn-primary">First</span>
+            <span class="btn btn-primary">Back</span>
+        }
+        @if (Model.CurrentPageNumber < intNumberOfPages)
+        {
+            <span class="btn btn-primary">@Html.ActionLink("Next", Model.Action, Model.Controller, new { pagenumber = (Model.CurrentPageNumber < intNumberOfPages ? Model.CurrentPageNumber + 1 : intNumberOfPages), sortby = Model.SortBy }, null)</span>
+            <span class="btn btn-primary">@Html.ActionLink("Last", Model.Action, Model.Controller, new { pagenumber = intNumberOfPages, sortby = Model.SortBy }, null)</span>
+        }
+        else
+        {
+            <span class="btn btn-primary">Next</span>
+            <span class="btn btn-primary">Last</span>
+        }
+    </span>
+    <span class=" message-success">@Model.CurrentPageNumber / @intNumberOfPages</span>
+</span>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdradarAdDataWeb", "AdradarAdDataWeb\AdradarAdDataWeb.csproj", "{ABB61580-1C80-486C-94B9-8553B6C0F6D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdradarAdDataWeb.Tests", "AdradarAdDataWeb.Tests\AdradarAdDataWeb.Tests.csproj", "{3C39E386-F886-4573-9E75-738C956151EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdradarAdDataWeb.Specs", "AdradarAdDataWeb.Specs\AdradarAdDataWeb.Specs.csproj", "{50CFB32E-A9FF-4934-8A59-36D0F3BF1322}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABB61580-1C80-486C-94B9-8553B6C0F6D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB61580-1C80-486C-94B9-8553B6C0F6D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB61580-1C80-486C-94B9-8553B6C0F6D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB61580-1C80-486C-94B9-8553B6C0F6D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C39E386-F886-4573-9E75-738C956151EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C39E386-F886-4573-9E75-738C956151EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C39E386-F886-4573-9E75-738C956151EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C39E386-F886-4573-9E75-738C956151EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50CFB32E-A9FF-4934-8A59-36D0F3BF1322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50CFB32E-A9FF-4934-8A59-36D0F3BF1322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50CFB32E-A9FF-4934-8A59-36D0F3BF1322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50CFB32E-A9FF-4934-8A59-36D0F3BF1322}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

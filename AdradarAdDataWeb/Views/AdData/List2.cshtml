@@ -1,0 +1,50 @@
+﻿@model List<AdradarAdDataWeb.AdDataServiceReference.Ad>
+
+@using AdradarAdDataWeb.Models
+
+@{
+    ViewBag.Title = "List 2";
+    string __Ad_AdId_DisplayName = MetadataHelper.GetDisplayName(typeof(AdradarAdDataWeb.AdDataServiceReference.Ad), "AdId");
+    string __Brand_BrandId_DisplayName = MetadataHelper.GetDisplayName(typeof(AdradarAdDataWeb.AdDataServiceReference.Brand), "BrandId");
+    string __Brand_BrandName_DisplayName = MetadataHelper.GetDisplayName(typeof(AdradarAdDataWeb.AdDataServiceReference.Brand), "BrandName");
+    string __Ad_NumPages_DisplayName = MetadataHelper.GetDisplayName(typeof(AdradarAdDataWeb.AdDataServiceReference.Ad), "NumPages");
+    string __Ad_Position_DisplayName = MetadataHelper.GetDisplayName(typeof(AdradarAdDataWeb.AdDataServiceReference.Ad), "Position");
+}
+
+<h2>List 2</h2>
+
+<section id="addatatable">
+    <header>A list of ads which appeared in the “Cover” position and also had at least 50% page coverage</header>
+    <table class="table table-striped table-hover">
+        <tr>
+            <th width="5%">@Html.ActionLink(__Ad_AdId_DisplayName, "List2", "AdData", new { pagenumber = 1, sortby = "adid" }, null)</th>
+            <th width="5%">@Html.ActionLink(__Brand_BrandId_DisplayName, "List2", "AdData", new { pagenumber = 1, sortby = "brandid" }, null)</th>
+            <th width="35%">@Html.ActionLink(__Brand_BrandName_DisplayName, "List2", "AdData", new { pagenumber = 1, sortby = "brandname" }, null)</th>
+            <th width="10%">@Html.ActionLink(__Ad_NumPages_DisplayName, "List2", "AdData", new { pagenumber = 1, sortby = "numpages" }, null)</th>
+            <th width="10%">Position</th>
+        </tr>
+        @foreach (var ad in Model)
+        {
+            <tr>
+                <td>@ad.AdId</td>
+                <td>@ad.Brand.BrandId</td>
+                <td>@ad.Brand.BrandName</td>
+                <td>@ad.NumPages</td>
+                <td>@ad.Position</td>
+            </tr>
+        }
+    </table>
+
+    @Html.Partial("~/Views/AdData/AdDataPager.cshtml", (PagerData)ViewBag.AdDataPagerData)
+</section>
+
+@section scripts{
+    <script type="text/javascript">
+        var __Ad_AdId_DisplayName = "@__Ad_AdId_DisplayName";
+        var __Brand_BrandId_DisplayName = "@__Brand_BrandId_DisplayName";
+        var __Brand_BrandName_DisplayName = "@__Brand_BrandName_DisplayName";
+        var __Ad_NumPages_DisplayName = "@__Ad_NumPages_DisplayName";
+        var __Ad_Position_DisplayName = "@__Ad_Position_DisplayName";
+    </script>
+    @System.Web.Optimization.Scripts.Render("~/bundles/adradaraddata")
+}

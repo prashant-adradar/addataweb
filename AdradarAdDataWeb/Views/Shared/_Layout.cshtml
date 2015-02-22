@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>@ViewBag.Title</title>
+@System.Web.Optimization.Styles.Render("~/Content/css")
+</head>
+<body>
+<ul id="menu">
+    <li>@Html.ActionLink("List 1", "Index", "AdData")</li>
+    <li>@Html.ActionLink("List 2", "List2", "AdData")</li>
+    <li>@Html.ActionLink("List 3", "List3", "AdData")</li>
+    <li>@Html.ActionLink("List 4", "List4", "AdData")</li>
+</ul>
+<section id="main">
+@RenderBody()
+<p>Copyright Prashant Mahajan 2015. All Rights Reserved. Last Updated: 02/20/2015</p>
+</section>
+@System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts")
+</body>
+</html>
