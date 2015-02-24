@@ -64,9 +64,10 @@ namespace AdradarAdDataWeb.Tests
         #endregion
 
         [TestMethod]
-        public void TestMethod_Verify_Loaddata()
+        public async Task TestMethod_Verify_Loaddata()
         {
             AdDataModel addatamodel = new AdDataModel();
+            bool ret = await addatamodel.LoadData();
             Assert.AreEqual(1163, addatamodel.NumberOfRows);
         }
 
@@ -88,11 +89,11 @@ namespace AdradarAdDataWeb.Tests
 
             //Act
             AdDataController controller = new AdDataController(mockAdDataModel.Object);
-            ActionResult result = controller.Index(1, "brandname");
+            Task<ActionResult> result = controller.Index(1, "brandname");
 
             //Assert
-            Assert.AreEqual(true, result is ViewResult);
-            ViewResult viewresult = result as ViewResult;
+            Assert.AreEqual(true, result.Result is ViewResult);
+            ViewResult viewresult = result.Result as ViewResult;
 
             Assert.AreEqual(true, viewresult.Model is List<Ad>);
             List<Ad> ads = viewresult.Model as List<Ad>;

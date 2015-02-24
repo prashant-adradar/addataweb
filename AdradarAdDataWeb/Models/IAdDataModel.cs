@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace AdradarAdDataWeb.Models
 {
@@ -10,5 +11,6 @@ namespace AdradarAdDataWeb.Models
         List<AdDataModel.GroupByBrandVM> GetTopNAdsByBrandByCoverage(int topN);
         List<AdDataModel.GroupTopNBrandNameVM> GetTopNByTotalCoverage(int topN);
         int NumberOfRows { get; set; }
+        Task<bool> LoadData();
     }
 }

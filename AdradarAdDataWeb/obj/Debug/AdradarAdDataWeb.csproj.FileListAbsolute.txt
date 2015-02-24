@@ -22,4 +22,3 @@ D:\Prashant\net4\ASP.net4\Adradar\AdradarAdDataWeb\bin\WebGrease.dll
 D:\Prashant\net4\ASP.net4\Adradar\AdradarAdDataWeb\bin\Antlr3.Runtime.pdb
 D:\Prashant\net4\ASP.net4\Adradar\AdradarAdDataWeb\bin\Newtonsoft.Json.xml
 D:\Prashant\net4\ASP.net4\Adradar\AdradarAdDataWeb\bin\System.Web.Optimization.xml
-D:\Prashant\net4\ASP.net4\Adradar\AdradarAdDataWeb\obj\Debug\AdradarAdDataWeb.csprojResolveAssemblyReference.cache

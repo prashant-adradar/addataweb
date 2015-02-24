@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using AdradarAdDataWeb.Models;
 using AdradarAdDataWeb.AdDataServiceReference;
+using System.Threading.Tasks;
 
 namespace AdradarAdDataWeb.Controllers
 {
@@ -22,10 +23,12 @@ namespace AdradarAdDataWeb.Controllers
             __model = model;
         }
 
-        public ActionResult Index(int pagenumber, string sortby)
+        public async Task<ActionResult> Index(int pagenumber, string sortby)
         {
             try
             {
+                bool ret = await __model.LoadData();
+
                 sortby = (sortby == null) ? "" : sortby;
                 List<Ad> data = __model.GetAllData(pagenumber, sortby);
 
@@ -39,10 +42,12 @@ namespace AdradarAdDataWeb.Controllers
             }
         }
 
-        public ActionResult List2(int pagenumber, string sortby)
+        public async Task<ActionResult> List2(int pagenumber, string sortby)
         {
             try
             {
+                bool ret = await __model.LoadData();
+
                 sortby = (sortby == null) ? "" : sortby;
                 List<Ad> data = __model.GetForPositionAtleastNumPages(pagenumber, sortby, 0.5M, "Cover");
 
@@ -56,10 +61,12 @@ namespace AdradarAdDataWeb.Controllers
             }
         }
 
-        public ActionResult List3()
+        public async Task<ActionResult> List3()
         {
             try
             {
+                bool ret = await __model.LoadData();
+
                 List<AdDataModel.GroupByBrandVM> data = __model.GetTopNAdsByBrandByCoverage(5);
 
                 return View(data);
@@ -70,10 +77,12 @@ namespace AdradarAdDataWeb.Controllers
             }
         }
 
-        public ActionResult List4()
+        public async Task<ActionResult> List4()
         {
             try
             {
+                bool ret = await __model.LoadData();
+
                 List<AdDataModel.GroupTopNBrandNameVM> data = __model.GetTopNByTotalCoverage(5);
 
                 return View(data);

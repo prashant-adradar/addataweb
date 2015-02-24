@@ -24,8 +24,6 @@ namespace AdradarAdDataWeb.Models
 
             IServiceClientFactory serviceclientfactory = new ServiceClientFactory();
             __addataserviceclient = serviceclientfactory.GetAdDataServiceClient();
-
-            __loadData();
         }
 
         public AdDataModel(IServiceClientFactory serviceclientfactory, DateTime startDate, DateTime endDate)
@@ -33,8 +31,15 @@ namespace AdradarAdDataWeb.Models
             __addataserviceclient = serviceclientfactory.GetAdDataServiceClient();
             __startDate = startDate;
             __endDate = endDate;
+        }
 
-            __loadData();
+        public async Task<bool> LoadData()
+        {
+            __AdData = await __getDataAsync();
+
+            NumberOfRows = __AdData.Length;
+
+            return true;
         }
 
         public int NumberOfRows { get; set; }
@@ -137,20 +142,9 @@ namespace AdradarAdDataWeb.Models
             return data;
         }
 
-        private void __loadData()
-        {
-            __AdData = null;
-
-            Task<Ad[]> ads1 = __getDataAsync();
-            ads1.Wait();
-            __AdData = ads1.Result;
-
-            NumberOfRows = __AdData.Length;
-        }
-
         private async Task<Ad[]> __getDataAsync()
         {
-            Ad[] ads = await __addataserviceclient.GetAdDataByDateRangeAsync(__startDate, __endDate).ConfigureAwait(false);
+            Ad[] ads = await __addataserviceclient.GetAdDataByDateRangeAsync(__startDate, __endDate);
             return ads;
         }
 
