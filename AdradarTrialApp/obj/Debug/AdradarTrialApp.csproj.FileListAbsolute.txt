@@ -1,6 +1,0 @@
-D:\Prashant\net4\ASP.net4\Adradar\AdradarTrialApp\bin\Debug\AdRadarTrialApp.exe.config
-D:\Prashant\net4\ASP.net4\Adradar\AdradarTrialApp\obj\Debug\AdRadarTrialApp.exe
-D:\Prashant\net4\ASP.net4\Adradar\AdradarTrialApp\obj\Debug\AdRadarTrialApp.pdb
-D:\Prashant\net4\ASP.net4\Adradar\AdradarTrialApp\bin\Debug\AdRadarTrialApp.exe
-D:\Prashant\net4\ASP.net4\Adradar\AdradarTrialApp\bin\Debug\AdRadarTrialApp.pdb
-D:\Prashant\net4\ASP.net4\Adradar\AdradarTrialApp\obj\Debug\AdradarTrialApp.csprojResolveAssemblyReference.cache
